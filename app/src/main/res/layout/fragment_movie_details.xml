@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fade_view"
+    tools:context=".ui.movieDetails.fragment.MovieDetails"
+    >
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/poster_movie"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="4dp"
+        />
+
+    <TextView
+        android:id="@+id/movieName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/ubuntu_medium"
+        android:textColor="@color/primaryDark900"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/poster_movie"
+        app:layout_constraintStart_toStartOf="@id/poster_movie"
+        app:layout_constraintTop_toBottomOf="@id/poster_movie"
+        tools:text="Avengers Endgame"
+        />
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="13dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/background_back_button"
+        android:padding="3dp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/primaryDark900"
+        />
+
+    <ImageView
+        android:id="@+id/btnLike"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="13dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="12dp"
+        android:background="@drawable/background_back_button"
+        android:padding="5dp"
+        android:src="@drawable/ic_empty_heart"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:tint="@color/primaryDark900"
+        />
+
+    <TextView
+        android:id="@+id/movieDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/primaryDark900"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/movieName"
+        app:layout_constraintStart_toStartOf="@id/movieName"
+        app:layout_constraintTop_toBottomOf="@id/movieName"
+        tools:text="22 Aug"
+        />
+
+    <TextView
+        android:id="@+id/movieRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/ubuntu"
+        android:textColor="@color/primaryDark900"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@id/movieName"
+        app:layout_constraintStart_toStartOf="@id/movieName"
+        app:layout_constraintTop_toBottomOf="@id/movieDate"
+        tools:text="Rating: 22.3"
+        />
+
+    <TextView
+        android:id="@+id/movieDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/ubuntu"
+        android:gravity="center"
+        android:maxLines="5"
+        android:padding="10dp"
+        android:textColor="@color/primaryDark900"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/movieRate"
+        tools:text="the movie is avengers end game its story about thanos who wanna destroy the earth, through collecting five stones."
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

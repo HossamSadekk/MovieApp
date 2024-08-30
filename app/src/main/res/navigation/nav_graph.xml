@@ -11,5 +11,20 @@
         android:name="com.example.moviedb.ui.movieList.fragment.MovieListFragment"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_list"
-        />
+        >
+        <action
+            android:id="@+id/action_movieListFragment_to_movieDetails"
+            app:destination="@id/movieDetails"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetails"
+        android:name="com.example.moviedb.ui.movieDetails.fragment.MovieDetails"
+        android:label="fragment_movie_details2"
+        tools:layout="@layout/fragment_movie_details"
+        >
+        <argument
+            android:name="movie"
+            app:argType="com.example.moviedb.data.model.Movie" />
+    </fragment>
 </navigation>

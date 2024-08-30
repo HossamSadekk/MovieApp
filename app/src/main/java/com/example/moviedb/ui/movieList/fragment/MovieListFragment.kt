@@ -4,10 +4,12 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import androidx.paging.LoadState
 import com.example.moviedb.core.base.fragment.BaseFragment
 import com.example.moviedb.databinding.FragmentMovieListBinding
 import com.example.moviedb.ui.movieList.adapter.MovieAdapter
+import com.example.moviedb.ui.movieList.fragment.MovieListFragmentDirections
 import com.example.moviedb.ui.movieList.viewmodel.MovieListViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -18,7 +20,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
     private val movieAdapter by lazy {
         MovieAdapter(
             onClickShowDetails = {
-
+                findNavController().navigate(MovieListFragmentDirections.actionMovieListFragmentToMovieDetails(it))
             }, onClickLike = {
                 viewModel.updateMovieState(it)
             }

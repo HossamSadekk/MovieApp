@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.hilt.plugin)
     id("kotlin-kapt")
     id("kotlin-parcelize")
+    id("androidx.navigation.safeargs.kotlin")
     alias(libs.plugins.ksp)
 }
 
