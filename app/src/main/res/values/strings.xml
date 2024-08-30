@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MovieDB</string>
+    <string name="movie_rating">Rating: %s</string>
 </resources>
