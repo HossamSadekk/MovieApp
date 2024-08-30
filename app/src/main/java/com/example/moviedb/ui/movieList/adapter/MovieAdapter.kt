@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.moviedb.R
 import com.example.moviedb.data.model.Movie
 import com.example.moviedb.databinding.MovieItemBinding
 import com.squareup.picasso.Picasso
@@ -46,7 +47,15 @@ class MovieAdapter(
                 root.setOnClickListener {
                     onClickShowDetails(movie)
                 }
+                btnLike.setImageResource(
+                    if (movie.isLiked) R.drawable.ic_full_heart else R.drawable.ic_empty_heart
+                )
                 btnLike.setOnClickListener {
+                    movie.isLiked = !movie.isLiked
+                    val newLikeStatus = movie.isLiked
+                    btnLike.setImageResource(
+                        if (newLikeStatus) R.drawable.ic_full_heart else R.drawable.ic_empty_heart
+                    )
                     onClickLike(movie)
                 }
             }

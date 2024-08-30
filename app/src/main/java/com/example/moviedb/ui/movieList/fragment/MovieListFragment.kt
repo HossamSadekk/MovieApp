@@ -20,7 +20,7 @@ class MovieListFragment : BaseFragment<FragmentMovieListBinding, MovieListViewMo
             onClickShowDetails = {
 
             }, onClickLike = {
-
+                viewModel.updateMovieState(it)
             }
         )
     }

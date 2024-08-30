@@ -7,14 +7,21 @@ import com.example.moviedb.domain.repository.MovieRepository
 import retrofit2.HttpException
 import java.io.IOException
 
-class MoviePagingSource(private val movieRepository: MovieRepository) : PagingSource<Int, Movie>() {
+class MoviePagingSource(
+    private val movieRepository: MovieRepository,
+) :
+    PagingSource<Int, Movie>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, Movie> {
         val page = params.key ?: 1
         return try {
             val response = movieRepository.getAllMovies(page = page)
+            val likedMovies = movieRepository.getAllMovies().map { it.id }.toSet()
+            val updatedMovies = response.movies.map { movie ->
+                movie.copy(isLiked = likedMovies.contains(movie.id))
+            }
             LoadResult.Page(
-                data = response.movies,
+                data = updatedMovies,
                 prevKey = if (page == 1) null else page - 1,
                 nextKey = if (page == response.totalPages) null else page + 1
             )
@@ -34,6 +41,7 @@ class MoviePagingSource(private val movieRepository: MovieRepository) : PagingSo
             ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
         }
     }
+
     private fun handleNetworkError(exception: IOException): Exception {
         return Exception("Network error. Please check your internet connection.")
     }
