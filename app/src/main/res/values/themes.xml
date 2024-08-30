@@ -1,14 +1,13 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MovieDB" parent="Theme.Material3.DayNight.NoActionBar">
-
         <!-- Brand Palette -->
-        <item name="colorPrimary">@color/brandPaletteDefault500</item> <!-- Default orange -->
-        <item name="colorPrimaryVariant">@color/brandPaletteDark800</item> <!-- Darker shade of orange -->
+        <item name="colorPrimary">@color/primaryDefault</item> <!-- Default blue -->
+        <item name="colorPrimaryVariant">@color/primaryDark800</item> <!-- Medium dark blue -->
         <item name="colorOnPrimary">@color/primaryWhite</item> <!-- White text on primary -->
 
         <!-- Secondary Color -->
-        <item name="colorSecondary">@color/secondaryDefault500</item> <!-- Lighter red -->
+        <item name="colorSecondary">@color/primaryDark800</item> <!-- Lighter red -->
         <item name="colorSecondaryVariant">@color/secondaryDark900</item> <!-- Dark red -->
         <item name="colorOnSecondary">@color/primaryWhite</item> <!-- White text on secondary -->
 
@@ -23,8 +22,10 @@
 
         <!-- Custom Colors -->
         <item name="colorTertiary">@color/greenColor</item> <!-- Green color -->
-        <item name="colorOnTertiary">@color/primaryWhite</item> <!-- White text on tertiary -->
+        <item name="colorOnTertiary">@color/primaryWhite</item>
     </style>
+
+
 
     <style name="Theme.MovieDB" parent="Base.Theme.MovieDB" />
 </resources>
