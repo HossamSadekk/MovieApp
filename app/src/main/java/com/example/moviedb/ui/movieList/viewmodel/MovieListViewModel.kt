@@ -1,6 +1,8 @@
 package com.example.moviedb.ui.movieList.viewmodel
 
+import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
+import androidx.paging.cachedIn
 import com.example.moviedb.core.base.viewmodel.BaseViewModel
 import com.example.moviedb.data.model.Movie
 import com.example.moviedb.domain.usecase.GetMoviesUseCase
@@ -24,7 +26,7 @@ class MovieListViewModel @Inject constructor(
 
     private fun fetchMovies() {
         collectFlow(
-            flow = getMoviesUseCase.execute(),
+            flow = getMoviesUseCase().cachedIn(viewModelScope),
             onCollect = { pagingData ->
                 _movies.value = pagingData
             }
