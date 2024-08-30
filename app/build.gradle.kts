@@ -34,6 +34,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    hilt {
+        enableAggregatingTask = false
+    }
 }
 
 dependencies {
@@ -66,5 +69,5 @@ dependencies {
     // Navigation
     implementation(libs.navigationFragment)
     implementation(libs.navigationUI)
-
+    implementation("com.squareup:javapoet:1.13.0")
 }
