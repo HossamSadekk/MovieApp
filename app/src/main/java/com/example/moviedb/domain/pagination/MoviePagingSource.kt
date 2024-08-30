@@ -18,10 +18,12 @@ class MoviePagingSource(private val movieRepository: MovieRepository) : PagingSo
                 prevKey = if (page == 1) null else page - 1,
                 nextKey = if (page == response.totalPages) null else page + 1
             )
-        } catch (exception: IOException) {
-            LoadResult.Error(exception)
-        } catch (exception: HttpException) {
-            LoadResult.Error(exception)
+        } catch (e: IOException) {
+            LoadResult.Error(handleNetworkError(e))
+        } catch (e: HttpException) {
+            LoadResult.Error(handleHttpError(e))
+        } catch (e: Exception) {
+            LoadResult.Error(handleUnknownError(e))
         }
     }
 
@@ -31,5 +33,22 @@ class MoviePagingSource(private val movieRepository: MovieRepository) : PagingSo
             state.closestPageToPosition(anchorPosition)?.prevKey?.plus(1)
             ?: state.closestPageToPosition(anchorPosition)?.nextKey?.minus(1)
         }
+    }
+    private fun handleNetworkError(exception: IOException): Exception {
+        return Exception("Network error. Please check your internet connection.")
+    }
+
+    private fun handleHttpError(exception: HttpException): Exception {
+        return when (exception.code()) {
+            401 -> Exception("Unauthorized access. Please check your API key.")
+            403 -> Exception("Forbidden. You might not have access to this resource.")
+            404 -> Exception("Resource not found. Check the endpoint or URL.")
+            500 -> Exception("Server error. Please try again later.")
+            else -> Exception("HTTP error occurred: ${exception.code()}")
+        }
+    }
+
+    private fun handleUnknownError(exception: Exception): Exception {
+        return Exception("An unexpected error occurred: ${exception.message}")
     }
 }

@@ -7,8 +7,8 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
+import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.launch
-
 
 open class BaseViewModel : ViewModel() {
 
@@ -33,19 +33,21 @@ open class BaseViewModel : ViewModel() {
         flow: Flow<T>,
         onCollect: (T) -> Unit,
     ) {
-        _loading.value = true  // Set loading to true when starting to collect
         viewModelScope.launch(coroutineExceptionHandler) {
-            try {
-                flow
-                    .catch { throwable ->
-                        _error.postValue(throwable.localizedMessage)
-                    }
-                    .collect { data ->
-                        onCollect(data)
-                    }
-            } finally {
-                _loading.value = false
-            }
+            flow
+                .catch { throwable ->
+                    _error.postValue(throwable.localizedMessage)
+                }
+                .collect { data ->
+                    onCollect(data)
+                }
         }
+    }
+
+    fun startLoading() {
+        _loading.value = true
+    }
+    fun stopLoading() {
+        _loading.value = false
     }
 }

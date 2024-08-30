@@ -11,11 +11,12 @@ import com.squareup.picasso.Picasso
 
 class MovieAdapter(
     private val onClickShowDetails: (Movie) -> Unit,
+    private val onClickLike: (Movie) -> Unit,
 ) : PagingDataAdapter<Movie, MovieAdapter.MovieViewHolder>(MovieDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
         val binding = MovieItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MovieViewHolder(binding, onClickShowDetails)
+        return MovieViewHolder(binding, onClickShowDetails, onClickLike)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
@@ -28,6 +29,7 @@ class MovieAdapter(
     inner class MovieViewHolder(
         private val binding: MovieItemBinding,
         private val onClickShowDetails: (Movie) -> Unit,
+        private val onClickLike: (Movie) -> Unit,
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(movie: Movie) {
@@ -43,6 +45,9 @@ class MovieAdapter(
 
                 root.setOnClickListener {
                     onClickShowDetails(movie)
+                }
+                btnLike.setOnClickListener {
+                    onClickLike(movie)
                 }
             }
         }
