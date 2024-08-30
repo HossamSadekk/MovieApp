@@ -37,6 +37,10 @@ android {
     hilt {
         enableAggregatingTask = false
     }
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -69,5 +73,7 @@ dependencies {
     // Navigation
     implementation(libs.navigationFragment)
     implementation(libs.navigationUI)
-    implementation("com.squareup:javapoet:1.13.0")
+    // Rounded Image View
+    implementation(libs.roundedImageView)
+    implementation(libs.picasso)
 }

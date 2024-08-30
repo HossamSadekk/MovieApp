@@ -1,5 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Brand Palette -->
+    <color name="brandPaletteDark800">#FF5722</color> <!-- Darker shade of orange -->
+    <color name="brandPaletteDark700">#FF7043</color> <!-- Lighter dark orange -->
+    <color name="brandPaletteDark600">#FF8A65</color> <!-- Medium orange -->
+    <color name="brandPaletteDefault500">#FFAB91</color> <!-- Default orange -->
+    <color name="brandPaletteLight400">#FFCCBC</color> <!-- Lighter orange -->
+    <color name="brandPaletteLight300">#FFEBEE</color> <!-- Lightest orange -->
+    <color name="brandPaletteLight200">#FFD54F</color> <!-- Light yellow -->
+    <color name="brandPaletteLight100">#FFF8E1</color> <!-- Light yellow white -->
+
+    <!-- Primary Color -->
+    <color name="primaryDark900">#0D47A1</color> <!-- Dark blue -->
+    <color name="primaryDark800">#1976D2</color> <!-- Medium dark blue -->
+    <color name="primaryDark700">#1E88E5</color> <!-- Medium blue -->
+    <color name="primaryDark600">#42A5F5</color> <!-- Light blue -->
+    <color name="primaryDefault">#64B5F6</color> <!-- Default blue -->
+    <color name="primaryLight400">#90CAF9</color> <!-- Light blue -->
+    <color name="primaryLight300">#BBDEFB</color> <!-- Lighter blue -->
+    <color name="primaryLight200">#E3F2FD</color> <!-- Lightest blue -->
+    <color name="primaryLight100">#F5F5F5</color> <!-- Light grey -->
+    <color name="primaryLight100WithOpacity">#CCEBF1F4</color> <!-- Light grey with opacity -->
+    <color name="primaryWhite">#FFFFFF</color> <!-- White -->
+
+    <!-- Secondary Color -->
+    <color name="secondaryDark900">#D32F2F</color> <!-- Dark red -->
+    <color name="secondaryDark900Opacity60">#99D32F2F</color> <!-- Dark red with opacity -->
+    <color name="secondaryDark800">#F44336</color> <!-- Red -->
+    <color name="secondaryDark700">#E57373</color> <!-- Lighter red -->
+    <color name="secondaryDark600">#EF5350</color> <!-- Medium red -->
+    <color name="secondaryDefault500">#FFCDD2</color> <!-- Lighter red -->
+    <color name="secondaryLight400">#FFEBEE</color> <!-- Lightest red -->
+    <color name="secondaryLight300">#FFC107</color> <!-- Yellow -->
+    <color name="secondaryLight200">#FFEB3B</color> <!-- Light yellow -->
+    <color name="secondaryLight100">#FFFDE7</color> <!-- Light yellow white -->
+    <color name="black">#000000</color> <!-- Black -->
+
+    <!-- Label Colors -->
+    <color name="lightRed">#FFEDEF</color> <!-- Light red background -->
+    <color name="lightBlue">#F2FAFF</color> <!-- Light blue background -->
+    <color name="lightGreen">#F0FFD7</color> <!-- Light green background -->
+    <color name="lightGrey">#FAFAFA</color> <!-- Light grey background -->
+
+    <!-- Neutral Colors -->
+    <color name="primaryNeutral200">#D8E2E9</color> <!-- Neutral grey -->
+    <color name="cardDetailsColor">#F4F4FB</color> <!-- Light grey for cards -->
+
+    <!-- Background Blur -->
+    <color name="blur_bg">#D5FFFFFF</color> <!-- Blur background -->
+
+    <!-- Accent Green Color -->
+    <color name="greenColor">#4CAF50</color> <!-- Green -->
 </resources>

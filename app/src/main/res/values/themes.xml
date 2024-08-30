@@ -1,8 +1,29 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.MovieDB" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <!-- Brand Palette -->
+        <item name="colorPrimary">@color/brandPaletteDefault500</item> <!-- Default orange -->
+        <item name="colorPrimaryVariant">@color/brandPaletteDark800</item> <!-- Darker shade of orange -->
+        <item name="colorOnPrimary">@color/primaryWhite</item> <!-- White text on primary -->
+
+        <!-- Secondary Color -->
+        <item name="colorSecondary">@color/secondaryDefault500</item> <!-- Lighter red -->
+        <item name="colorSecondaryVariant">@color/secondaryDark900</item> <!-- Dark red -->
+        <item name="colorOnSecondary">@color/primaryWhite</item> <!-- White text on secondary -->
+
+        <!-- Background and Surface Colors -->
+        <item name="android:colorBackground">@color/primaryLight100</item> <!-- Light grey background -->
+        <item name="colorSurface">@color/primaryWhite</item> <!-- White surface -->
+        <item name="colorOnSurface">@color/primaryDark900</item> <!-- Dark blue text on surface -->
+
+        <!-- Additional Colors -->
+        <item name="colorError">@color/brandPaletteDark700</item> <!-- Darker orange for errors -->
+        <item name="colorOnError">@color/primaryWhite</item> <!-- White text on error -->
+
+        <!-- Custom Colors -->
+        <item name="colorTertiary">@color/greenColor</item> <!-- Green color -->
+        <item name="colorOnTertiary">@color/primaryWhite</item> <!-- White text on tertiary -->
     </style>
 
     <style name="Theme.MovieDB" parent="Base.Theme.MovieDB" />
