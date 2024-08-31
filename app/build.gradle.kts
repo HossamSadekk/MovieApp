@@ -50,9 +50,14 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.core.ktx)
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.runner)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation("androidx.arch.core:core-testing:2.2.0")
+
     // DI
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
@@ -64,7 +69,7 @@ dependencies {
     implementation(libs.gson)
     // DB
     implementation(libs.room.runtime)
-    ksp(libs.room.compiler)
+    kapt(libs.room.compiler)
     implementation(libs.room.ktx)
     // Logging
     implementation(libs.timber)
@@ -77,4 +82,9 @@ dependencies {
     // Rounded Image View
     implementation(libs.roundedImageView)
     implementation(libs.picasso)
+    // Testing
+    testImplementation(libs.mockk)
+    testImplementation(libs.coroutines.test)
+    testImplementation(libs.room.test)
+
 }

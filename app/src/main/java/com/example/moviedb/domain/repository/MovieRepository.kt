@@ -8,5 +8,5 @@ interface MovieRepository {
     suspend fun insertMovie(movie: MovieEntity)
     suspend fun deleteMovie(movieId: Int)
     suspend fun doesMovieExist(movieId: Int): Boolean
-    suspend fun getAllMovies(): List<MovieEntity>
+    suspend fun getFavoriteMovies(): List<MovieEntity>
 }

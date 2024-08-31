@@ -12,7 +12,7 @@ class MovieRepositoryImp @Inject constructor(
     private val movieDao: MovieDao,
 ) : MovieRepository {
     override suspend fun getAllMovies(page: Int): MovieResponse = getMoviesAPIService.discoverMovies(page = page)
-    override suspend fun getAllMovies(): List<MovieEntity> = movieDao.getAllMovies()
+    override suspend fun getFavoriteMovies(): List<MovieEntity> = movieDao.getAllMovies()
     override suspend fun insertMovie(movie: MovieEntity) = movieDao.insertMovie(movie)
     override suspend fun deleteMovie(movieId: Int) = movieDao.deleteLikedMovie(movieId)
     override suspend fun doesMovieExist(movieId: Int): Boolean = movieDao.doesMovieExist(movieId)
