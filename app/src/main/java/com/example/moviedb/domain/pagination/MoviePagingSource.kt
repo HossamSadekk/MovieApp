@@ -16,7 +16,7 @@ class MoviePagingSource(
         val page = params.key ?: 1
         return try {
             val response = movieRepository.getAllMovies(page = page)
-            val likedMovies = movieRepository.getAllMovies().map { it.id }.toSet()
+            val likedMovies = movieRepository.getFavoriteMovies().map { it.id }.toSet()
             val updatedMovies = response.movies.map { movie ->
                 movie.copy(isLiked = likedMovies.contains(movie.id))
             }

@@ -1,6 +1,6 @@
 [versions]
 agp = "8.3.2"
-kotlin = "1.9.10"
+kotlin = "2.0.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -14,9 +14,14 @@ retrofit = "2.9.0"
 okhttp = "4.12.0"
 gson = "2.10.1"
 room = "2.6.1"
-pagination= "3.3.2"
+pagination = "3.3.2"
 navigation = "2.7.7"
 picasso = "2.71828"
+mockk = "1.13.5"
+coroutineTest = "1.8.0"
+coreKtxVersion = "1.6.1"
+junitKtx = "1.2.1"
+runner = "1.6.2"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -51,10 +56,17 @@ navigationUI = { module = "androidx.navigation:navigation-ui-ktx", version.ref =
 roundedImageView = { module = "com.makeramen:roundedimageview", version = "2.3.0" }
 # Picasso
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
+# Testing
+mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
+coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutineTest" }
+room-test = { module = "androidx.room:room-testing", version.ref = "room" }
+core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "coreKtxVersion" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
+androidx-runner = { group = "androidx.test", name = "runner", version.ref = "runner" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 jetbrainsKotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 hilt-Plugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
-ksp = { id = "com.google.devtools.ksp", version = "1.9.21-1.0.15" }
+ksp = { id = "com.google.devtools.ksp", version = "1.9.22-1.0.17" }
 
